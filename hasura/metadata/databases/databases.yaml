@@ -1,0 +1,10 @@
+- name: cockroachdb
+  kind: cockroach
+  configuration:
+    connection_info:
+      database_url: postgresql://root@cockroach:26257/hasura
+      isolation_level: read-committed
+      use_prepared_statements: false
+  customization:
+    naming_convention: hasura-default
+  tables: "!include cockroachdb/tables/tables.yaml"
