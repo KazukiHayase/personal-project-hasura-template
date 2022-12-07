@@ -10,8 +10,7 @@ services:
       POSTGRES_PASSWORD: postgrespassword
 
   cockroach:
-    # TODO: 正式リリースされたらバージョンをあげる
-    image: cockroachdb/cockroach-unstable:v22.2.0-beta.4
+    image: cockroachdb/cockroach:v22.2.0
     command:
       - start-single-node
       - --insecure
