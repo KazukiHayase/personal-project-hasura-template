@@ -6,5 +6,5 @@
       isolation_level: read-committed
       use_prepared_statements: false
   customization:
-    naming_convention: hasura-default
+    naming_convention: graphql-default
   tables: "!include cockroachdb/tables/tables.yaml"
