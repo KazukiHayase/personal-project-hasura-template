@@ -1,0 +1,24 @@
+# name: Deploy to hasura on merge
+# on:
+#   push:
+#     branches:
+#       - main
+#     paths:
+#       - "hasura/**"
+#   workflow_dispatch:
+#
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v3
+#
+#       - name: Deploy to hasura
+#         uses: tibotiber/hasura-action@v3.0
+#         with:
+#           args: deploay
+#         env:
+#           HASURA_ENDPOINT: ""
+#           HASURA_ADMIN_SECRET: ${{ secrets.PROD_HASURA_ADMIN_SECRET }}
+#           HASURA_ENGINE_VERSION: v2.15.2 
