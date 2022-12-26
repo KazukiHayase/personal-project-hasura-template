@@ -1,17 +1,14 @@
+HASURA_CLI_VERSION := v2.16.1
+
 .PHONY: setup-hasura-cli
 setup-hasura-cli:
 	curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh | bash
-	hasura update-cli --version v2.15.2
+	hasura update-cli --version $(HASURA_CLI_VERSION)
 
-.PHONY: apply
-apply:
-	make migrate
-	make metadata
+.PHONY: deploy
+deploy:
+	hasura deploy --skip-update-check
 
-.PHONY: metadata
-metadata:
-	hasura metadata apply --skip-update-check
-
-.PHONY: migrate
-migrate:
-	hasura migrate apply --database-name cockroachdb --skip-update-check
+.PHONY: console
+console:
+	hasura console --no-browser --skip-update-check
