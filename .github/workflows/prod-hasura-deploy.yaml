@@ -21,4 +21,4 @@
 #         env:
 #           HASURA_ENDPOINT: ""
 #           HASURA_ADMIN_SECRET: ${{ secrets.PROD_HASURA_ADMIN_SECRET }}
-#           HASURA_ENGINE_VERSION: v2.15.2 
+#           HASURA_ENGINE_VERSION: v2.16.2 
