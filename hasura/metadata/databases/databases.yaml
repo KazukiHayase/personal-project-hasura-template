@@ -1,10 +1,17 @@
-- name: cockroachdb
-  kind: cockroach
+- name: default
+  kind: postgres
   configuration:
     connection_info:
-      database_url: postgresql://root@cockroach:26257/hasura
+      database_url:
+        from_env: HASURA_GRAPHQL_DATABASE_URL
       isolation_level: read-committed
-      use_prepared_statements: false
+      pool_settings:
+        connection_lifetime: 600
+        idle_timeout: 180
+        max_connections: 50
+        retries: 1
+      use_prepared_statements: true
   customization:
     naming_convention: graphql-default
-  tables: "!include cockroachdb/tables/tables.yaml"
+  tables: "!include default/tables/tables.yaml"
+
