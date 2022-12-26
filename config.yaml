@@ -6,4 +6,4 @@ migrations_directory: hasura/migrations
 seeds_directory: hasura/seeds
 actions:
   kind: synchronous
-  handler_webhook_baseurl: http://localhost:3000
+  handler_webhook_baseurl: http://localhost:3333
